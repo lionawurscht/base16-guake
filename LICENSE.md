@@ -1,6 +1,6 @@
 # LICENSE
 
-Base16 Xresources is released under the MIT License:
+Base16 Guake is released under the MIT License:
 
 > Copyright (C) 2012 [Chris Kempson](http://chriskempson.com)
 > 
