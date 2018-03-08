@@ -1,7 +1,7 @@
-base16-xresources
+base16-guake
 =================
 
-Base16 for Xresources
+Base16 for Guake
 
 ### Installation
 Add the colors to your **.Xresources**
