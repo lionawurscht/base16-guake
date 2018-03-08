@@ -4,12 +4,12 @@
 
 dir=../themes
 
-if [ $1 = "-l" ]; then
+if [ "$1" = "-l" ]; then
     ls -l $dir | awk '{print $NF}' | sed -n 's/\.theme// p'
     echo "--- all available themes ---"
     exit 0
 else
-    $1="{{scheme-slug}}"
+    set -- "{{scheme-slug}}"
 fi
 
 if [ ! -f $dir/$1.theme ]; then
@@ -44,7 +44,8 @@ BACKGROUND_COLOR=`color_repeat $BACKGROUND_COLOR`
 FOREGROUND_COLOR=`color_repeat $FOREGROUND_COLOR`
 
 
-gconftool-2 -s -t string /apps/guake/style/background/color $BACKGROUND_COLOR
-gconftool-2 -s -t string /apps/guake/style/font/color $FOREGROUND_COLOR
-gconftool-2 -s -t string /apps/guake/style/font/palette $palette
+dconf write /apps/guake/style/background/color "'$BACKGROUND_COLOR'"
+dconf write /apps/guake/style/font/color "'$FOREGROUND_COLOR'"
+dconf write /apps/guake/style/font/palette "'$palette'"
+dconf write /apps/guake/style/font/palette-name "'{{scheme-slug}}'"
 
