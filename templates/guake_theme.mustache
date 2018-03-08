@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Author: ziyenano (https://github.com/ziyenano/Guake-Color-Schemes)
+# Original Author: ziyenano (https://github.com/ziyenano/Guake-Color-Schemes)
 
 
 dir=../themes
@@ -9,7 +9,7 @@ if [ "$1" = "-l" ]; then
     echo "--- all available themes ---"
     exit 0
 else
-    set -- "{{scheme-slug}}"
+    set -- "base16-{{scheme-slug}}"
 fi
 
 if [ ! -f $dir/$1.theme ]; then
