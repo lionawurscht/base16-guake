@@ -2,12 +2,14 @@
 # Author: ziyenano (https://github.com/ziyenano/Guake-Color-Schemes)
 
 
-dir=./templates
+dir=../themes
 
 if [ $1 = "-l" ]; then
     ls -l $dir | awk '{print $NF}' | sed -n 's/\.theme// p'
     echo "--- all available themes ---"
     exit 0
+else
+    $1="{{scheme-slug}}"
 fi
 
 if [ ! -f $dir/$1.theme ]; then

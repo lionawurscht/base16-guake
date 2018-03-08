@@ -1,3 +1,7 @@
 default: 
     extension: .theme
-    output: guake
+    output: themes
+
+guake_theme: 
+    extension: .sh
+    output: scripts
